@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en" data-theme="neon-dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VelocityType | Premium Typing Speed Test</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <!-- Glow Elements for background depth -->
+      <div class="bg-glow bg-glow-1"></div>
+      <div class="bg-glow bg-glow-2"></div>
+
+      <!-- App Header -->
+      <header class="app-header">
+        <div class="logo-area cursor-pointer" id="logo-btn">
+          <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="4" width="20" height="16" rx="3" stroke="currentColor" stroke-width="2"/>
+            <rect x="5" y="8" width="2" height="2" rx="0.5" fill="currentColor"/>
+            <rect x="9" y="8" width="2" height="2" rx="0.5" fill="currentColor"/>
+            <rect x="13" y="8" width="2" height="2" rx="0.5" fill="currentColor"/>
+            <rect x="17" y="8" width="2" height="2" rx="0.5" fill="currentColor"/>
+            <rect x="5" y="12" width="2" height="2" rx="0.5" fill="currentColor"/>
+            <rect x="9" y="12" width="6" height="2" rx="0.5" fill="currentColor"/>
+            <rect x="17" y="12" width="2" height="2" rx="0.5" fill="currentColor"/>
+          </svg>
+          <span class="logo-text">Velocity<span class="logo-highlight">Type</span></span>
+        </div>
+
+        <div class="header-controls">
+          <!-- Theme Toggle Dropdown -->
+          <div class="control-group">
+            <label for="theme-select" class="control-label">Theme</label>
+            <select id="theme-select" class="control-select">
+              <option value="neon-dark">Neon Dark</option>
+              <option value="cyberpunk">Cyberpunk</option>
+              <option value="emerald-mint">Emerald Mint</option>
+              <option value="sunset-breeze">Sunset Breeze</option>
+            </select>
+          </div>
+
+          <!-- Sound Toggle -->
+          <button id="sound-toggle" class="control-btn active" title="Toggle Sound Effects">
+            <svg class="icon-sound-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            </svg>
+            <svg class="icon-sound-off hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <line x1="23" y1="9" x2="17" y2="15"></line>
+              <line x1="17" y1="9" x2="23" y2="15"></line>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <!-- 1) Welcome Screen -->
+        <section id="welcome-screen" class="screen active">
+          <div class="welcome-card glass-panel">
+            <div class="welcome-badge">Unleash Your Typing Power</div>
+            <h1 class="welcome-title">Master the Art of <span class="gradient-text">Speed & Precision</span></h1>
+            <p class="welcome-description">
+              Measure your raw typing velocity, track your character accuracy in real-time, and challenge yourself to reach the leaderboard status.
+            </p>
+            <button id="btn-get-started" class="btn btn-primary btn-glow">
+              Get Started
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </div>
+        </section>
+
+        <!-- 2) Setup Screen (Time Selection) -->
+        <section id="setup-screen" class="screen">
+          <div class="setup-container">
+            <h2 class="section-title">Select Test Duration</h2>
+            <p class="section-subtitle">Choose a timeframe that suits your goals. Longer tests gauge stamina and true accuracy.</p>
+            
+            <div class="time-cards-grid">
+              <div class="time-card glass-panel cursor-pointer" data-time="60">
+                <div class="time-icon-wrapper">
+                  <span class="time-val">1</span>
+                  <span class="time-unit">Min</span>
+                </div>
+                <h3 class="time-title">Sprint Test</h3>
+                <p class="time-desc">Quick burst to test your top-end speed.</p>
+              </div>
+
+              <div class="time-card glass-panel cursor-pointer" data-time="120">
+                <div class="time-icon-wrapper">
+                  <span class="time-val">2</span>
+                  <span class="time-unit">Min</span>
+                </div>
+                <h3 class="time-title">Standard Run</h3>
+                <p class="time-desc">The standard benchmark for typing profiles.</p>
+              </div>
+
+              <div class="time-card glass-panel cursor-pointer" data-time="300">
+                <div class="time-icon-wrapper">
+                  <span class="time-val">5</span>
+                  <span class="time-unit">Min</span>
+                </div>
+                <h3 class="time-title">Stamina Check</h3>
+                <p class="time-desc">Challenges sustained typing pace and concentration.</p>
+              </div>
+
+              <div class="time-card glass-panel cursor-pointer" data-time="600">
+                <div class="time-icon-wrapper">
+                  <span class="time-val">10</span>
+                  <span class="time-unit">Min</span>
+                </div>
+                <h3 class="time-title">Marathon Run</h3>
+                <p class="time-desc">Ultimate endurance test. Perfect for pros.</p>
+              </div>
+            </div>
+
+            <div class="text-selection-area">
+              <label class="control-label">Select Text Category</label>
+              <div class="category-buttons">
+                <button class="btn btn-outline active" data-category="general">General</button>
+                <button class="btn btn-outline" data-category="code">Coding (JavaScript)</button>
+                <button class="btn btn-outline" data-category="literature">Literature Quotes</button>
+                <button class="btn btn-outline" data-category="facts">Sci-Fi & Space Facts</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3) Active Test Screen -->
+        <section id="test-screen" class="screen">
+          <div class="test-container">
+            <!-- Stats Dashboard Bar -->
+            <div class="stats-dashboard glass-panel">
+              <div class="stat-box">
+                <span class="stat-label">TIME</span>
+                <span id="timer-display" class="stat-value font-mono">01:00</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-box">
+                <span class="stat-label">SPEED</span>
+                <span id="live-wpm" class="stat-value font-mono">0 <span class="stat-unit">WPM</span></span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-box">
+                <span class="stat-label">ACCURACY</span>
+                <span id="live-accuracy" class="stat-value font-mono">100<span class="stat-unit">%</span></span>
+              </div>
+            </div>
+
+            <!-- Typing Arena -->
+            <div class="typing-arena-wrapper glass-panel" id="arena-panel">
+              <div class="typing-arena-focus-msg" id="focus-message">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
+                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                </svg>
+                Click inside here or start typing to begin
+              </div>
+              <!-- Hidden Input that captures user keystrokes -->
+              <input type="text" id="keyboard-input" autocomplete="off" autofocus />
+              
+              <!-- Typing Text Layout Container -->
+              <div id="text-display-box" class="text-display font-mono">
+                <!-- Text characters loaded dynamically here -->
+              </div>
+            </div>
+
+            <!-- Controls (Restart, Change Settings) -->
+            <div class="test-controls-row">
+              <button id="btn-reset-test" class="btn btn-secondary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                  <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+                </svg>
+                Reset
+              </button>
+              <button id="btn-change-duration" class="btn btn-outline">
+                Change Settings
+              </button>
+            </div>
+
+            <!-- Virtual Keyboard -->
+            <div class="keyboard-container glass-panel">
+              <!-- Keyboard keys populated in styling/JS -->
+              <div class="keyboard" id="virtual-keyboard"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4) Results Screen -->
+        <section id="results-screen" class="screen">
+          <div class="results-container">
+            <h2 class="section-title">Test Results</h2>
+            <p class="section-subtitle">Here is a breakdown of your typing performance.</p>
+
+            <div class="results-dashboard">
+              <!-- Result Stat Cards -->
+              <div class="results-stats-col">
+                <div class="result-card glass-panel animate-pop-in">
+                  <div class="result-metric">
+                    <span class="result-val font-mono" id="result-wpm">0</span>
+                    <span class="result-lbl">NET WPM</span>
+                  </div>
+                  <p class="result-explanation">Adjusted for errors (Words Per Minute)</p>
+                </div>
+
+                <div class="result-card glass-panel animate-pop-in" style="animation-delay: 0.1s;">
+                  <div class="result-metric">
+                    <span class="result-val font-mono" id="result-accuracy">0%</span>
+                    <span class="result-lbl">ACCURACY</span>
+                  </div>
+                  <p class="result-explanation">Percentage of correct key inputs</p>
+                </div>
+
+                <div class="result-card glass-panel animate-pop-in" style="animation-delay: 0.2s;">
+                  <div class="result-metric">
+                    <div class="char-breakdown font-mono">
+                      <div><span class="text-success" id="result-correct-chars">0</span> <span class="lbl-small">correct</span></div>
+                      <div class="stat-divider-horizontal"></div>
+                      <div><span class="text-error" id="result-error-chars">0</span> <span class="lbl-small">errors</span></div>
+                    </div>
+                    <span class="result-lbl">CHARACTERS</span>
+                  </div>
+                  <p class="result-explanation">Correct vs incorrect key entries</p>
+                </div>
+
+                <div class="result-card glass-panel animate-pop-in" style="animation-delay: 0.3s;">
+                  <div class="result-metric">
+                    <span class="result-val font-mono" id="result-gross-wpm">0</span>
+                    <span class="result-lbl">GROSS WPM</span>
+                  </div>
+                  <p class="result-explanation">Raw speed before subtracting errors</p>
+                </div>
+              </div>
+
+              <!-- Performance Chart Display (Dynamic SVG) -->
+              <div class="chart-card glass-panel animate-pop-in" style="animation-delay: 0.25s;">
+                <h3 class="chart-title">WPM Timeline Progress</h3>
+                <div class="svg-chart-container" id="svg-chart-box">
+                  <!-- Generated dynamically via JS -->
+                </div>
+                <div class="chart-legend">
+                  <span class="legend-item"><span class="legend-dot dot-speed"></span>Speed (WPM)</span>
+                  <span class="legend-item"><span class="legend-dot dot-error"></span>Errors</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action buttons -->
+            <div class="results-actions">
+              <button id="btn-retry" class="btn btn-primary btn-glow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+                  <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+                </svg>
+                Try Again
+              </button>
+              <button id="btn-new-settings" class="btn btn-secondary">
+                Configure New Test
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- App Footer -->
+      <footer class="app-footer">
+        <p>&copy; 2026 VelocityType. Designed & Developed by Raj. Built for precision and performance.</p>
+      </footer>
+    </div>
+    
+    <!-- Canvas for interactive typing keyboard explosion / ripple particle effects -->
+    <canvas id="particles-canvas"></canvas>
+    
+    <!-- Main JS module entrypoint -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
